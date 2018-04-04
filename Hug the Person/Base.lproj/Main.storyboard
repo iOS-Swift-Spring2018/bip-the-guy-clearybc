@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,79 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hug_the_Person" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="reva" translatesAutoresizingMaskIntoConstraints="NO" id="h1c-5T-fYM">
+                                <rect key="frame" x="68" y="150" width="239" height="170"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kru-bD-dw3" appends="YES" id="WQm-df-hrB"/>
+                                    <outletCollection property="gestureRecognizers" destination="kru-bD-dw3" appends="YES" id="fz7-5u-eJx"/>
+                                    <outletCollection property="gestureRecognizers" destination="kru-bD-dw3" appends="YES" id="At1-CR-JBO"/>
+                                    <outletCollection property="gestureRecognizers" destination="kru-bD-dw3" appends="YES" id="ok5-zf-brh"/>
+                                    <outletCollection property="gestureRecognizers" destination="kru-bD-dw3" appends="YES" id="a6f-JL-p2q"/>
+                                </connections>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Wn7-uX-7oU">
+                                <rect key="frame" x="99" y="455" width="176" height="0.0"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="km7-ow-fk0">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="0.0"/>
+                                        <state key="normal" title="Photo Library"/>
+                                        <connections>
+                                            <action selector="libraryPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wJH-03-axc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8f-2I-tXG">
+                                        <rect key="frame" x="122" y="0.0" width="54" height="0.0"/>
+                                        <state key="normal" title="Camera"/>
+                                        <connections>
+                                            <action selector="cameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AYq-s5-ERp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose Image to Hug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jas-t6-zdz">
+                                <rect key="frame" x="104" y="409" width="166" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="OBC-gn-oo1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="h1c-5T-fYM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Bhn-2q-KJN"/>
+                            <constraint firstItem="jas-t6-zdz" firstAttribute="top" secondItem="h1c-5T-fYM" secondAttribute="bottom" constant="38" id="Tvn-ds-Maf"/>
+                            <constraint firstItem="jas-t6-zdz" firstAttribute="centerX" secondItem="Wn7-uX-7oU" secondAttribute="centerX" id="W81-Kq-PBw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wn7-uX-7oU" secondAttribute="bottom" constant="182" id="YzL-Xw-hBz"/>
+                            <constraint firstItem="h1c-5T-fYM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="ZAU-8Y-uNe"/>
+                            <constraint firstItem="h1c-5T-fYM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="k9p-Fn-tyu"/>
+                            <constraint firstItem="Wn7-uX-7oU" firstAttribute="top" secondItem="jas-t6-zdz" secondAttribute="bottom" constant="19" id="q9F-vc-cVw"/>
+                            <constraint firstItem="h1c-5T-fYM" firstAttribute="centerX" secondItem="jas-t6-zdz" secondAttribute="centerX" id="rBL-UB-xJr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageToHug" destination="h1c-5T-fYM" id="agx-rU-ofD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kru-bD-dw3">
+                    <connections>
+                        <action selector="imageGesture:" destination="BYZ-38-t0r" id="caY-qj-Ay7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="reva" width="1544" height="1024"/>
+    </resources>
 </document>
